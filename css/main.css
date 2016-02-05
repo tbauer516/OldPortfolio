@@ -1,0 +1,53 @@
+/*
+	base 		#174B1D
+	dark-green	#001D04
+	med-green	#09340E
+	lighter		#295D2F
+	bright  	#447E4B
+*/
+
+body {
+	padding-top: 70px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 12pt;
+}
+
+#backgroundImg  {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+	background-image: url("../img/dunes-xs.jpg");
+}
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+	#backgroundImg  {
+		background-image: url("../img/dunes-sm.jpg");
+	}		
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+	#backgroundImg  {
+		background-image: url("../img/dunes-md.jpg");
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
+	#backgroundImg  {
+		background-image: url("../img/dunes-lg.jpg");
+	}
+	
+}
