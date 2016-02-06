@@ -1,15 +1,27 @@
 /*
-	base 		#174B1D
-	dark-green	#001D04
-	med-green	#09340E
-	lighter		#295D2F
-	bright  	#447E4B
+	base 		#22531F
+	dark		#252525
+	gray		#454545
+	lighter		#0B6C06
+	bright  	#08A700
 */
 
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover, .logo:hover, .logo div:hover {
+	color: black;
+	text-decoration: none;
+	background-color: white;
+}
+
 body {
-	padding-top: 70px;
+	padding-top: 50px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 12pt;
+	background-color: #252525;
 }
 
 #backgroundImg  {
@@ -18,8 +30,51 @@ body {
 	background-size: cover;
 	height: 500px;
 	background-image: url("../img/dunes-xs.jpg");
+	opacity: 0.5;
+	position: relative;
 }
 
+.logo {
+	position: relative;
+	height: 50px;
+	text-align: center;
+}
+
+.logo div {
+	position: absolute;
+	height: 50px;
+	padding-left: 6px;
+	padding-right: 6px;
+	width: 150px;
+	font-size: 20pt;
+	padding-top: 50%;
+	margin: 0;
+}
+
+.navbar {
+	background-color: #454545;
+	margin-bottom: 0;
+	height: 50px;
+}
+
+.no-pad {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.pName {
+	font-size: 60pt;
+	position: absolute;
+	height: 70pt;
+	top: 50%;
+	margin-top: -35pt;
+	margin-left: 10%;
+	color: white;
+}
+
+.transparent {
+	background-color: #22531F;
+}
 
 
 /* Extra small devices (phones, less than 768px) */
