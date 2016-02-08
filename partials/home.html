@@ -1,29 +1,29 @@
-<div class="row no-pad">
+<div class="row no-pad" scroll-spy>
 	<div class="col-sm-1 no-pad">
 		<div id="navbar" class="navbar-collapse collapse no-pad" uib-collapse="!menuCollapsed" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 		    <ul class="nav sidebar-nav">
-		        <li><a href="#/#aboutMe" ng-click="menuCollapsed = !menuCollapsed">About</a></li>
-		        <li><a href="#/#projects" ng-click="menuCollapsed = !menuCollapsed">Projects</a></li>
-		        <li><a href="#/#connect" ng-click="menuCollapsed = !menuCollapsed">Connect</a></li>
+		        <li spy="aboutMe"><a href="#/#aboutMe" ng-click="menuCollapsed = !menuCollapsed">About</a></li>
+		        <li spy="projects"><a href="#/#projects" ng-click="menuCollapsed = !menuCollapsed">Projects</a></li>
+		        <li spy="connect"><a href="#/connect" ng-click="menuCollapsed = !menuCollapsed">Connect</a></li>
 		    </ul>
 		</div>
 	</div>
 	<div class="col-sm-11 no-pad">
 		<div class="container-fluid no-pad">
-			<div class="transparent green">
-				<div id="backgroundImg">
+			<div class="transparent green section">
+				<div id="backgroundImg" class="section">
 					<p class="pName">Tyler Bauer</p>
 				</div>
 			</div>
-			<div id="aboutMe">
+			<div id="aboutMe" class="section">
 
 			</div>
 
-			<div id="projects">
+			<div id="projects" class="section">
 
 			</div>
 
-			<div id="connect">
+			<div id="connect" class="section">
 
 			</div>
 		</div>
