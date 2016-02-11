@@ -1,22 +1,49 @@
-<div class="row no-pad" scroll-spy>
-	<div class="col-sm-1 no-pad">
-		<div id="navbar" class="navbar-collapse collapse no-pad" uib-collapse="!menuCollapsed" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+<nav class="navbar navbar-default navbar-fixed-top ng-scope">
+    <div class="container-fluid nav-main no-pad">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="menuCollapsed = !menuCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="logo" du-smooth-scroll href="#/#top" ng-click="menuCollapsed = false">
+                <div>
+                    Tyler Bauer
+                </div>
+            </a>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>
+
+<div class="row no-pad">
+	<div class="col-sm-1 no-pad sidebar-grid">
+		<div id="sidebar" class="navbar-collapse collapse no-pad" uib-collapse="!menuCollapsed" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 		    <ul class="nav sidebar-nav">
-		        <li spy="aboutMe"><a href="#/#aboutMe" ng-click="menuCollapsed = !menuCollapsed">About</a></li>
-		        <li spy="projects"><a href="#/#projects" ng-click="menuCollapsed = !menuCollapsed">Projects</a></li>
-		        <li spy="connect"><a href="#/connect" ng-click="menuCollapsed = !menuCollapsed">Connect</a></li>
+		        <li du-scrollspy="aboutMe"><a du-smooth-scroll href="#/#aboutMe" ng-click="menuCollapsed = !menuCollapsed">About</a></li>
+		        <li du-scrollspy="projects"><a du-smooth-scroll href="#/#projects" ng-click="menuCollapsed = !menuCollapsed">Projects</a></li>
+		        <li du-scrollspy="connect"><a du-smooth-scroll href="#/#connect" ng-click="menuCollapsed = !menuCollapsed">Connect</a></li>
 		    </ul>
 		</div>
 	</div>
 	<div class="col-sm-11 no-pad">
 		<div class="container-fluid no-pad">
-			<div class="transparent green section">
+			<div id="top" class="transparent green section">
 				<div id="backgroundImg" class="section">
 					<p class="pName">Tyler Bauer</p>
 				</div>
 			</div>
 			<div id="aboutMe" class="section">
-
+				<div class="profile">
+				</div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
 
 			<div id="projects" class="section">
