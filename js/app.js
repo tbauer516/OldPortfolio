@@ -69,9 +69,11 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     //     return promise;
     // };
 
-    // if trash is clicked, delete review
     $scope.delete = function(item) {
-        $scope.list.$remove(item);
+        var approve = confirm("Are you sure you want to delete?");
+        if (approve) {
+            $scope.projects.$remove(item);
+        }
     };
 
     //separate signIn function
