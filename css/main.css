@@ -17,10 +17,15 @@ a:hover, a:focus, .logo:hover, .logo:focus, .logo div:hover, .logo div:focus, .a
 	background-color: white !important;
 }
 
+#aboutMe {
+	color: white;
+	background-color: #454545;
+}
+
 body {
 	padding-top: 50px;
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 12pt;
+	font-size: 14pt;
 	background-color: #252525;
 	color: white;
 }
@@ -44,6 +49,10 @@ footer {
 	height: 35px;
 }
 
+form input, form button {
+	color: black;
+}
+
 .logo {
 	position: relative;
 	height: 50px;
@@ -52,19 +61,28 @@ footer {
 
 .logo div {
 	position: absolute;
-	height: 50px;
+	height: 45px;
 	padding-left: 6px;
 	padding-right: 6px;
-	width: 150px;
-	font-size: 20pt;
+	width: 170px;
+	font-size: 24pt;
 	margin: 0;
-	padding-top: 7px;
+	padding-top: 0px;
+}
+
+.logout {
+	left: 200px;
+}
+
+.logout div {
+	border: 2px solid white;
 }
 
 .navbar {
 	background-color: #454545 !important;
 	margin-bottom: 0;
 	height: 50px;
+	border-bottom: 5px solid #0B6C06;
 } 
 
 .no-pad {
@@ -73,7 +91,7 @@ footer {
 }
 
 .pName {
-	font-size: 60pt;
+	font-size: 80pt;
 	position: absolute;
 	height: 70pt;
 	top: 50%;
@@ -87,7 +105,22 @@ footer {
 	width: 200px;
 	background-image: url("../img/profile.jpg");
 	background-position: center;
+	background-size: contain;
 	float: left;
+}
+
+#projects {
+	color: white;
+	background-color: #22531F;
+	padding: 15px;
+}
+
+#projects h1 {
+	margin-top: 0px;
+}
+
+.row {
+	margin: 0px;
 }
 
 .sidebar-grid {
@@ -97,6 +130,7 @@ footer {
 
 .sidebar-nav {
 	position: fixed;
+	padding-right: 0px;
 }
 
 .transparent {

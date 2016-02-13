@@ -1,0 +1,14 @@
+<form name="addProject">
+	<h1>Title</h1>
+	<input ng-model="title" placeholder="Title...">
+	<h1>Description</h1>
+	<input ng-model="description" placeholder="Description...">
+	<h1>Date Completed</h1>
+	<input ng-model="date" placeholder="Date Completed...">
+	<h1>Link</h1>
+	<input ng-model="link" placeholder="Source Code Link...">
+	<a ui-sref="home">
+		<button ng-if="id == undefined" ng-click="save()">Save</button>
+		<button ng-if="id" ng-click="edit()">Save Changes</button>
+	</a>
+</form>

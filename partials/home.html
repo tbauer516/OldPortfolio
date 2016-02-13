@@ -12,6 +12,11 @@
                     Tyler Bauer
                 </div>
             </a>
+            <a ng-if="userName == 'tyler.bauer7@gmail.com'" href="" class="logo logout" ng-click="logOut()">
+            	<div>
+    				Log Out
+    			</div>
+    		</a>
         </div>
         <!--/.nav-collapse -->
     </div>
@@ -21,7 +26,7 @@
 <div class="row no-pad">
 	<div class="col-sm-1 no-pad sidebar-grid">
 		<div id="sidebar" class="navbar-collapse collapse no-pad" uib-collapse="!menuCollapsed" aria-expanded="false" aria-hidden="true" style="height: 0px;">
-		    <ul class="nav sidebar-nav">
+		    <ul class="nav sidebar-nav col-sm-1">
 		        <li du-scrollspy="aboutMe"><a du-smooth-scroll href="#/#aboutMe" ng-click="menuCollapsed = !menuCollapsed">About</a></li>
 		        <li du-scrollspy="projects"><a du-smooth-scroll href="#/#projects" ng-click="menuCollapsed = !menuCollapsed">Projects</a></li>
 		        <li du-scrollspy="connect"><a du-smooth-scroll href="#/#connect" ng-click="menuCollapsed = !menuCollapsed">Connect</a></li>
@@ -47,7 +52,14 @@
 			</div>
 
 			<div id="projects" class="section">
-
+				<a ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="edit">New</a>
+				<div class="project" ng-repeat="project in projects">
+					<a ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="itemEdit({id: projects.$indexFor(projects.$keyAt(project))})">Edit</a>
+					<h1>{{project.title}}</h1>
+					<p>{{project.description}}</p>
+					<p>{{project.date}}</p>
+					<a ng-href="project.link">Source Code</a>
+				</div>
 			</div>
 
 			<div id="connect" class="section">
@@ -56,3 +68,9 @@
 		</div>
 	</div>
 </div>
+
+<footer>
+    <div>
+        <p>Designed and Created by Tyler Bauer, University of Washington Student of the Information School</p>
+    </div>
+</footer>
