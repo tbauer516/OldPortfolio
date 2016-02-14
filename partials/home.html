@@ -56,6 +56,7 @@
 							<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="itemEdit({id: projects.$indexFor(projects.$keyAt(project))})">Edit</a>
 							<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" href="" ng-click="delete(project)">Delete</a>
 							<h1>{{project.title}}</h1>
+							<img alt="project screenshot" ng-src="{{project.image}}">
 							<p>{{project.description}}</p>
 							<hr>
 							<p class="date">- Completed: {{project.date}}</p>

@@ -141,6 +141,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     if ($scope.id != undefined) {
         $scope.title = $scope.projects[$scope.id].title;
         $scope.description = $scope.projects[$scope.id].description;
+        $scope.image = $scope.projects[$scope.id].image;
         $scope.link = $scope.projects[$scope.id].link;
         $scope.date = $scope.projects[$scope.id].date;
     }
@@ -149,6 +150,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
         var newProject = {
             title : $scope.title,
             description : $scope.description,
+            image: $scope.image,
             link : $scope.link,
             date : $scope.date
         }
@@ -158,6 +160,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     $scope.edit = function() {
         $scope.projects[$scope.id].title = $scope.title;
         $scope.projects[$scope.id].description = $scope.description;
+        $scope.projects[$scope.id].image = $scope.image;
         $scope.projects[$scope.id].link = $scope.link;
         $scope.projects[$scope.id].date = $scope.date;
         $scope.$parent.projects.$save($scope.$parent.projects[$scope.id]);
