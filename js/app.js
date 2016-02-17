@@ -25,6 +25,11 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
             url: '/edit/{id}',
             templateUrl: 'partials/edit.html',
             controller: 'EditCtrl'
+        })
+        .state('infoEdit', {
+            url: '/infoEdit/{id}',
+            templateUrl: 'partials/infoEdit.html',
+            controller: 'InfoEditCtrl'
         });
 
     // $locationProvider.html5Mode(true);
@@ -52,7 +57,16 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
         valueRef = ref.child('projects');
     }
 
+    var valueRef2 = ref.child('info');
+    if (valueRef2 === undefined) {
+        ref.push().set({
+            'info': {}
+        });
+        valueRef2 = ref.child('info');
+    }
+
     $scope.projects = $firebaseArray(valueRef);
+    $scope.info = $firebaseObject(valueRef2);
 
     // signUp function that chains and calls signIn afterwards
     // $scope.signUp = function(email, password) {
@@ -168,9 +182,28 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 
 }])
 
-.controller('ItemEditCtrl', ['$scope', function($scope) {
+.controller('InfoEditCtrl', ['$scope', function($scope) {
 
+    if ($scope.$parent.info.dob) {
+    $scope.dob = $scope.$parent.info.dob;
+    $scope.school = $scope.$parent.info.school;
+    $scope.degree = $scope.$parent.info.degree;
+    $scope.skills = $scope.$parent.info.skills.join(", ");
+    $scope.languages = $scope.$parent.info.languages.join(", ");
+    $scope.image = $scope.$parent.info.image;
+    $scope.description = $scope.$parent.info.description;
+    }
 
+    $scope.saveInfo = function() {
+        $scope.$parent.info.dob = $scope.dob;
+        $scope.$parent.info.school = $scope.school;
+        $scope.$parent.info.degree = $scope.degree;
+        $scope.$parent.info.skills = $scope.skills.split(", ");
+        $scope.$parent.info.languages = $scope.languages.split(", ");
+        $scope.$parent.info.image = $scope.image;
+        $scope.$parent.info.description = $scope.description;
+        $scope.$parent.info.$save();
+    }
 
 }])
 

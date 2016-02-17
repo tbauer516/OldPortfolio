@@ -55,7 +55,7 @@ footer {
 	height: 35px;
 }
 
-form input, form button {
+form input, form button, form textarea {
 	color: black;
 }
 
@@ -121,7 +121,6 @@ form input, form button {
 	background-image: url("../img/profile.jpg");
 	background-position: center;
 	background-size: contain;
-	float: left;
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
