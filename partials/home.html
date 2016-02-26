@@ -45,21 +45,27 @@
 				<a ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="infoEdit">Edit</a>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-6">
-						<img class="profile" src="{{info.image}}" alt="profile">
+						<div class="left-pad">
+							<img class="profile" src="{{info.image}}" alt="profile">
+						</div>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6">
-						<p>Date of Birth: {{info.dob}}</p>
-						<p>Education: {{info.school}}</p>
-						<p>Degree: {{info.degree}}</p>
-						<ul>Skills:</ul>
-							<li ng-repeat="skill in info.skills">{{skill}}</li>
-						<ul>Languages:</ul>
-							<li ng-repeat="language in info.languages">{{language}}</li>
+						<div class="left-pad">
+							<p>Date of Birth: {{info.dob}}</p>
+							<p>Education: {{info.school}}</p>
+							<p>Degree: {{info.degree}}</p>
+							<ul class="aboutList">Skills:</ul>
+								<li class="aboutListItem" ng-repeat="skill in info.skills">{{skill}}</li>
+							<ul class="aboutList">Languages:</ul>
+								<li class="aboutListItem" ng-repeat="language in info.languages">{{language}}</li>
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
-						<p>{{info.description}}</p>
+						<div class="left-pad">
+							<p>{{info.description}}</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -67,25 +73,30 @@
 			<div id="projects" class="section">
 				<h1>My Projects</h1>
 				<a ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="edit">New</a>
-				<div ng-repeat="project in projects">
-					<div class="col-xs-12 col-sm-12 col-md-6">
-						<div class="project">
-							<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="itemEdit({id: projects.$indexFor(projects.$keyAt(project))})">Edit</a>
-							<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" href="" ng-click="delete(project)">Delete</a>
-							<h1>{{project.title}}</h1>
-							<img alt="project screenshot" ng-src="{{project.image}}">
-							<p>{{project.description}}</p>
-							<hr>
-							<p class="date">- Completed: {{project.date}}</p>
-							<a class="source" ng-href="{{project.link}}">Source Code</a>
+				<div>
+					<div class="row" ng-repeat="project in projects track by $index" ng-if="$index % 2 == 0">
+						<div class="col-xs-12 col-sm-12 col-md-6" ng-repeat="i in [$index, $index + 1]" ng-if="projects[i] != null">
+							<div class="project">
+								<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="itemEdit({id: projects.$indexFor(projects.$keyAt(projects[i]))})">Edit</a>
+								<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" href="" ng-click="delete(projects[i])">Delete</a>
+								<h1>{{projects[i].title}}</h1>
+								<img alt="projects[i] screenshot" ng-src="{{projects[i].image}}">
+								<p>{{projects[i].description}}</p>
+								<hr>
+								<p class="date">- Completed: {{projects[i].date}}</p>
+								<a class="source" ng-href="{{projects[i].link}}">Source Code</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div id="connect" class="section">
-			<h1>Connect With Me</h1>
-
+				<h1>Connect With Me</h1>
+				<p>
+					<a href="https://www.linkedin.com/in/tbauer516" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a>
+					<a href="mailto:tbauer16@uw.edu"><i class="fa fa-envelope"></i> Email Me</a>
+				</p>
 			</div>
 		</div>
 	</div>

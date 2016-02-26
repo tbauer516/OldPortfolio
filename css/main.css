@@ -17,6 +17,16 @@ a:hover, a:focus, .logo:hover, .logo:focus, .logo div:hover, .logo div:focus, .a
 	background-color: white !important;
 }
 
+.aboutList {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.aboutListItem {
+	margin-left: 30px;
+}
+
 #aboutMe {
 	color: white;
 	background-color: #454545;
@@ -46,6 +56,10 @@ body {
 	position: relative;
 }
 
+#connect p {
+	font-size: 24pt;
+}
+
 footer {
 	border-top-style: solid;
 	border-top-color: #454545;
@@ -57,6 +71,11 @@ footer {
 
 form input, form button, form textarea {
 	color: black;
+}
+
+.left-pad {
+	padding-left: 50px;
+	margin-bottom: 50px;
 }
 
 .logo {
@@ -121,8 +140,8 @@ form input, form button, form textarea {
 	background-image: url("../img/profile.jpg");
 	background-position: center;
 	background-size: contain;
-	margin-right: 20px;
-	margin-bottom: 20px;
+	/*margin-right: 20px;
+	margin-bottom: 20px;*/
 }
 
 .project {
