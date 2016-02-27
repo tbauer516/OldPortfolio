@@ -30,6 +30,11 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
             url: '/infoEdit/{id}',
             templateUrl: 'partials/infoEdit.html',
             controller: 'InfoEditCtrl'
+        })
+        .state('email', {
+            url: '/email',
+            templateUrl: 'partials/email.html',
+            controller: 'EmailControl'
         });
 
     // $locationProvider.html5Mode(true);
@@ -49,12 +54,12 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     var Auth = $firebaseAuth(ref);
 
     //reference to a value in the JSON in the Sky
-    var valueRef = ref.child('projects');
+    var valueRef = ref.child('projects').orderByChild('date');
     if (valueRef === undefined) {
         ref.push().set({
             'projects': []
         });
-        valueRef = ref.child('projects');
+        valueRef = ref.child('projects').orderByChild('date');
     }
 
     var valueRef2 = ref.child('info');
@@ -139,6 +144,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 
     $scope.logOut = $scope.$parent.logOut;
 
+    $scope.getDate = function(date) {
+        return new Date(date);
+    }
+
 }])
 
 .controller('LoginCtrl', ['$scope', function($scope) {
@@ -152,31 +161,38 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     $scope.projects = $scope.$parent.projects;
     $scope.id = $stateParams.id;
 
+    $scope.gitorvid = "github";
+
     if ($scope.id != undefined) {
+        $scope.gitorvid = $scope.projects[$scope.id].type;
         $scope.title = $scope.projects[$scope.id].title;
         $scope.description = $scope.projects[$scope.id].description;
         $scope.image = $scope.projects[$scope.id].image;
         $scope.link = $scope.projects[$scope.id].link;
-        $scope.date = $scope.projects[$scope.id].date;
+        $scope.date = new Date($scope.projects[$scope.id].date);
     }
 
     $scope.save = function() {
+        var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
         var newProject = {
+            type : $scope.gitorvid,
             title : $scope.title,
             description : $scope.description,
             image: $scope.image,
             link : $scope.link,
-            date : $scope.date
+            date : newDate
         }
         $scope.$parent.projects.$add(newProject);
     }
 
     $scope.edit = function() {
+        var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
+        $scope.projects[$scope.id].type = $scope.gitorvid;
         $scope.projects[$scope.id].title = $scope.title;
         $scope.projects[$scope.id].description = $scope.description;
         $scope.projects[$scope.id].image = $scope.image;
         $scope.projects[$scope.id].link = $scope.link;
-        $scope.projects[$scope.id].date = $scope.date;
+        $scope.projects[$scope.id].date = newDate;
         $scope.$parent.projects.$save($scope.$parent.projects[$scope.id]);
     }
 
@@ -206,6 +222,18 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     }
 
 }])
+
+.controller('EmailControl', ['$scope', function($scope) {
+
+
+
+}])
+
+.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+})
 
 .directive('resize', function ($window) {
     return function (scope, element) {

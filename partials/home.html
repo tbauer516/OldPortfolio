@@ -83,8 +83,8 @@
 								<img alt="projects[i] screenshot" ng-src="{{projects[i].image}}">
 								<p>{{projects[i].description}}</p>
 								<hr>
-								<p class="date">- Completed: {{projects[i].date}}</p>
-								<a class="source" ng-href="{{projects[i].link}}">Source Code</a>
+								<p class="date">- Completed: {{getDate(projects[i].date) | date : 'MMM dd, yyyy'}}</p>
+								<a class="source" ng-href="{{projects[i].link}}">{{projects[i].type == 'github' && 'Source Code' || projects[i].type=='video' && 'Video Link'}}</a>
 							</div>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 				<h1>Connect With Me</h1>
 				<p>
 					<a href="https://www.linkedin.com/in/tbauer516" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a>
-					<a href="mailto:tbauer16@uw.edu"><i class="fa fa-envelope"></i> Email Me</a>
+					<a href=""><i class="fa fa-envelope"></i> Email Me</a>
 				</p>
 			</div>
 		</div>

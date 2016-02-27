@@ -1,12 +1,16 @@
 <form name="addProject">
+	<input type="radio" ng-model="gitorvid" value="github"> GitHub Project
+	<br>
+	<input type="radio" ng-model="gitorvid" value="video"> Video Project
+	<br>
 	<h1>Title</h1>
 	<input ng-model="title" placeholder="Title...">
 	<h1>Description</h1>
 	<input ng-model="description" placeholder="Description...">
 	<h1>Date Completed</h1>
-	<input ng-model="date" placeholder="Date Completed...">
+	<input type="date" ng-model="date" placeholder="Date Completed...">
 	<h1>Link</h1>
-	<input ng-model="link" placeholder="Source Code Link...">
+	<input type="url" ng-model="link" placeholder="Source Code Link...">
 	<h1>Image</h1>
 	<input ng-model="image" placeholder="Image URI here...">
 	<a href="img-encoder/index.html" target="_blank">
