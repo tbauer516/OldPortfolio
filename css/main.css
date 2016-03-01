@@ -134,6 +134,10 @@ form input, form button, form textarea {
 	color: white;
 }
 
+.preserve {
+	white-space: pre-wrap;
+}
+
 .profile {
 	height: 300px;
 	width: 300px;
