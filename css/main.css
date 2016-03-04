@@ -38,6 +38,11 @@ a:hover, a:focus, .logo:hover, .logo:focus, .logo div:hover, .logo div:focus, .a
 	padding: 20px;
 }
 
+.about-me-lists, .about-me-lists li {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
 body {
 	padding-top: 50px;
 	font-family: 'Josefin Sans', sans-serif;
@@ -60,6 +65,21 @@ body {
 	font-size: 24pt;
 }
 
+.connections {
+	border: 5px solid #454545;
+	padding: 15px;
+	width: auto;
+	display: inline-block;
+}
+
+.connections-wrapper {
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
 footer {
 	border-top-style: solid;
 	border-top-color: #454545;
@@ -74,7 +94,7 @@ form input, form button, form textarea {
 }
 
 .left-pad {
-	padding-left: 50px;
+	/*padding-left: 50px;*/
 	margin-bottom: 50px;
 }
 
@@ -148,12 +168,14 @@ form input, form button, form textarea {
 	margin-bottom: 20px;*/
 }
 
+.profile-div {
+	text-align: center;
+}
+
 .project {
 	border: 5px solid #0B6C06;
 	padding: 15px;
 	margin-bottom: 15px;
-	margin-right: 10%;
-	margin-left: 10%;
 }
 
 .project h1 {
@@ -163,6 +185,7 @@ form input, form button, form textarea {
 .project img {
 	width: 100%;
 	height: 100%;
+	margin-bottom: 20px;
 }
 
 .project .date {
@@ -184,12 +207,24 @@ form input, form button, form textarea {
 	background-color: #22531F;
 }
 
+.project-wrapper {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 .row {
 	margin: 0px;
 }
 
-.section h1 {
+.section > h1 {
 	margin-top: 0px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 46pt;
+}
+
+.section > p {
+	text-align: center;
 }
 
 .sidebar ul {
@@ -221,6 +256,11 @@ form input, form button, form textarea {
 		background-image: url("../img/dunes-sm.jpg");
 	}		
 
+	.connections-wrapper {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
 	.hide-lg {
 		display: none;
 		visibility: hidden;
@@ -229,6 +269,11 @@ form input, form button, form textarea {
 	.profile {
 		height: 400px;
 		width: 400px;
+	}
+
+	.project {
+		margin-right: 10%;
+		margin-left: 10%;
 	}
 
 }

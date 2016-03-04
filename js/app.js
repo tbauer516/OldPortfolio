@@ -169,11 +169,12 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
         $scope.description = $scope.projects[$scope.id].description;
         $scope.image = $scope.projects[$scope.id].image;
         $scope.link = $scope.projects[$scope.id].link;
-        $scope.date = new Date($scope.projects[$scope.id].date);
+        $scope.date = new Date($scope.projects[$scope.id].date * -1);
     }
 
     $scope.save = function() {
-        var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
+        // var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
+        var newDate = $scope.date.getTime() * -1;
         var newProject = {
             type : $scope.gitorvid,
             title : $scope.title,
@@ -186,7 +187,8 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     }
 
     $scope.edit = function() {
-        var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
+        // var newDate = ($scope.date.getMonth() + 1) + '-' + $scope.date.getDate() + '-' + $scope.date.getFullYear();
+        var newDate = $scope.date.getTime() * -1;
         $scope.projects[$scope.id].type = $scope.gitorvid;
         $scope.projects[$scope.id].title = $scope.title;
         $scope.projects[$scope.id].description = $scope.description;
