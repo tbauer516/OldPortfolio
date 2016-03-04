@@ -45,12 +45,12 @@
 				<a ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="infoEdit">Edit</a>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-6">
-						<div class="left-pad profile-div">
+						<div class="bottom-margin profile-div">
 							<img class="profile" src="{{info.image}}" alt="profile">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-6">
-						<div class="left-pad">
+						<div class="bottom-margin">
 							<p>Date of Birth: {{info.dob}}</p>
 							<p>Education: {{info.school}}</p>
 							<p>Degree: {{info.degree}}</p>
@@ -102,7 +102,7 @@
 				<div class="connections-wrapper">
 					<p class="connections">
 						<a href="https://www.linkedin.com/in/tbauer516" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a>
-						<a ui-sref="email"><i class="fa fa-envelope"></i> Email Me</a>
+						<a class="margin-left" id="myEmail" href="" data-clipboard-text="tbauer16@uw.edu" tooltip-placement="bottom" tooltip-is-open="isOpen" uib-tooltip="Email copied to clipboard!" ng-click="isOpen = true" ng-mouseleave="isOpen = false" tooltip-trigger="none" tooltip-class="tooltip"><i class="fa fa-envelope"></i> Email Me</a>
 					</p>
 				</div>
 				<div class="connections-wrapper">

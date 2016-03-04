@@ -134,7 +134,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 
 }])
 
-.controller('HomeCtrl', ['$scope', '$timeout', '$http', function($scope) {
+.controller('HomeCtrl', ['$scope', '$element', function($scope, $element) {
 
     var height = window.innerHeight;
     var sections = document.querySelectorAll('.section');
@@ -147,6 +147,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     $scope.getDate = function(date) {
         return new Date(date);
     }
+
+    var clipboard = new Clipboard('#myEmail');
+
+    $scope.isOpen = false;
 
 }])
 
