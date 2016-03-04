@@ -1,5 +1,4 @@
 <?php
-if($_POST["submit"]) {
     $recipient="tbauer16@uw.edu";
     $subject="Contact From Your Website";
     $sender=$_POST["name"];
@@ -9,5 +8,4 @@ if($_POST["submit"]) {
     mail($recipient, $subject, $mailBody);
 	sleep(1);
 	header("Location:http://tylerbauer.me/#/");
-}
 ?>
