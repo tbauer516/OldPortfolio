@@ -168,6 +168,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
     $scope.gitorvid = "github";
 
     if ($scope.id != undefined) {
+        $scope.demo = $scope.projects[$scope.id].demo;
         $scope.gitorvid = $scope.projects[$scope.id].type;
         $scope.title = $scope.projects[$scope.id].title;
         $scope.description = $scope.projects[$scope.id].description;
@@ -185,6 +186,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
             description : $scope.description,
             image: $scope.image,
             link : $scope.link,
+            demo : $scope.demo,
             date : newDate
         }
         $scope.$parent.projects.$add(newProject);
@@ -198,6 +200,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
         $scope.projects[$scope.id].description = $scope.description;
         $scope.projects[$scope.id].image = $scope.image;
         $scope.projects[$scope.id].link = $scope.link;
+        $scope.projects[$scope.id].demo = $scope.demo;
         $scope.projects[$scope.id].date = newDate;
         $scope.$parent.projects.$save($scope.$parent.projects[$scope.id]);
     }
@@ -239,6 +242,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
   return function(items) {
     return items.slice().reverse();
   };
+})
+
+.filter('encodeURI', function() {
+    return window.encodeURI;
 })
 
 .directive('resize', function ($window) {
