@@ -86,11 +86,11 @@
 								<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" ui-sref="itemEdit({id: projects.$indexFor(projects.$keyAt(projects[i]))})">Edit</a>
 								<a class="edit" ng-if="userName == 'tyler.bauer7@gmail.com'" href="" ng-click="delete(projects[i])">Delete</a>
 								<h1>{{projects[i].title}}</h1>
-								<a ng-href="{{projects[i].demo}}"><img alt="projects[i] screenshot" ng-src="{{projects[i].image}}"></a>
+								<a ng-href="{{projects[i].demo}}" target="_blank"><img alt="projects[i] screenshot" ng-src="{{projects[i].image}}"></a>
 								<p>{{projects[i].description}}</p>
 								<hr>
 								<p class="date">- Completed: {{getDate(projects[i].date * -1) | date : 'MMM dd, yyyy'}}</p>
-								<a class="source" ng-if="projects[i].type == 'github'" ng-href="{{projects[i].link}}">Source Code</a>
+								<a class="source" ng-if="projects[i].type == 'github'" ng-href="{{projects[i].link}}" target="_blank">Source Code</a>
 							</div>
 						</div>
 					</div>

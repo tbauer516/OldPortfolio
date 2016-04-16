@@ -205,6 +205,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
         $scope.$parent.projects.$save($scope.$parent.projects[$scope.id]);
     }
 
+    $scope.clearImg = function() {
+        $scope.image = '';
+    }
+
 }])
 
 .controller('InfoEditCtrl', ['$scope', function($scope) {
