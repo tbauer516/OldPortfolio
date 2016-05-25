@@ -136,6 +136,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 
 .controller('HomeCtrl', ['$scope', '$element', function($scope, $element) {
 
+    $scope.getDemoSite = function(project) {
+        return "bauer-demo.herokuapp.com/" + project;
+    }
+
     var height = window.innerHeight;
     var sections = document.querySelectorAll('.section');
     for (var i = 0; i < sections.length; i++) {
