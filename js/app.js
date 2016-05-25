@@ -137,7 +137,10 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 .controller('HomeCtrl', ['$scope', '$element', function($scope, $element) {
 
     $scope.getDemoSite = function(project) {
-        return "bauer-demo.herokuapp.com/" + project;
+        var githubArray = project.link.split("/");
+        var index = githubArray.length;
+        var projectName = githubArray[index];
+        return "http://bauer-demo.herokuapp.com/" + projectName
     }
 
     var height = window.innerHeight;
