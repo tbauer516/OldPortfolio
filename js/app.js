@@ -137,10 +137,14 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 .controller('HomeCtrl', ['$scope', '$element', function($scope, $element) {
 
     $scope.getDemoSite = function(project) {
-        var githubArray = project.link.split("/");
-        var index = githubArray.length - 1;
-        var projectName = githubArray[index];
-        return "http://bauer-demo.herokuapp.com/" + projectName
+        if (project.type == "github") {
+            var githubArray = project.link.split("/");
+            var index = githubArray.length - 1;
+            var projectName = githubArray[index];
+            return "http://bauer-demo.herokuapp.com/" + projectName
+        } else {
+            return project.demo;
+        }
     }
 
     var height = window.innerHeight;
