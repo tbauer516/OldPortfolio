@@ -138,7 +138,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
 
     $scope.getDemoSite = function(project) {
         var githubArray = project.link.split("/");
-        var index = githubArray.length;
+        var index = githubArray.length - 1;
         var projectName = githubArray[index];
         return "http://bauer-demo.herokuapp.com/" + projectName
     }
