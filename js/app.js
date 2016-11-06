@@ -141,7 +141,7 @@ angular.module('Portfolio', ['ui.router', 'ui.bootstrap', 'angulartics', 'angula
             var githubArray = project.link.split("/");
             var index = githubArray.length - 1;
             var projectName = githubArray[index];
-            return "http://bauer-demo.herokuapp.com/" + projectName
+            return "http://demo-tbauer.rhcloud.com/" + projectName
         } else {
             return project.demo;
         }
